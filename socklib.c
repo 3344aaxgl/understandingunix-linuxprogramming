@@ -12,7 +12,7 @@
 #define BACKLOG 1
 
 int make_server_socket_q(int,int);
-
+//服务器端socket
 int make_server_soket(int portnum)
 {
     return make_server_socket_q(portnum,BACKLOG);
@@ -44,7 +44,7 @@ int make_server_socket_q(int portnum,int backlog)
       return -1;    
     return sock_id;
 }
-
+//客户端socket
 int connect_to_server(char *host,int portnum)
 {
     int sock;
