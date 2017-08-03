@@ -1,17 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<unistd.h>
-#include<sys/types.h>
-#include<sys/socket.h>
-#include<netinet/in.h>
-#include<netdb.h>
-#include<time.h>
-#include<string.h>
+#include "socklib.h"
 
-#define HOSTLEN 256
-#define BACKLOG 1
 
-int make_server_socket_q(int,int);
 //服务器端socket
 int make_server_soket(int portnum)
 {
@@ -44,6 +33,7 @@ int make_server_socket_q(int portnum,int backlog)
       return -1;    
     return sock_id;
 }
+
 //客户端socket
 int connect_to_server(char *host,int portnum)
 {
@@ -67,4 +57,10 @@ int connect_to_server(char *host,int portnum)
       return -1;
     
     return sock;
+}
+
+//请求
+void choice(char *request ,int fd)
+{
+  
 }
